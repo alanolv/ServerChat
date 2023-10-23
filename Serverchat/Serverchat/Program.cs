@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChatServer.Chat;
+using System;
 
 namespace MyApp // Note: actual namespace depends on the project name.
 {
@@ -6,7 +7,9 @@ namespace MyApp // Note: actual namespace depends on the project name.
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+         Server s =new Server("localhost",4404);
+         s.Start();
+
         }
     }
 }
