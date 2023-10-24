@@ -62,9 +62,9 @@ namespace ChatServer.Chat
                 {
                     Buffer = new byte[1024];
                     s_cliente.Receive(Buffer);
-                    user = (User) BinarySerialization.Deserializate(Buffer);
+                    user = (User)BinarySerialization.Deserializate(Buffer);
                     Console.WriteLine("Se recibio el mensaje de: " + user.name);
-                    connectedClients.Add(user);
+                    connectedClients.Add(user); 
                     SendUserListToAllClients(connectedClients);
                     Console.Out.Flush();
                     
@@ -92,10 +92,14 @@ namespace ChatServer.Chat
         }
         private void SendUserListToAllClients(object tosend)
         {
-            string serializedList = JsonConvert.SerializeObject(tosend);
-            byte[] data = Encoding.UTF8.GetBytes(serializedList);
-            s_cliente.Send(data);
-            Console.WriteLine("Lista enviada");
+            foreach (var item in connectedClients)
+            {
+                string serializedList = JsonConvert.SerializeObject(tosend);
+                byte[] data = Encoding.UTF8.GetBytes(serializedList);
+                s_cliente.Send(data);
+                Console.WriteLine("Lista enviada");
+            }
+            
         }
 
     }
