@@ -12,3 +12,6 @@ C:\Users\olver\OneDrive\Desktop\Proyectos de programacion\Proyecto distribuidos\
 C:\Users\olver\OneDrive\Desktop\Proyectos de programacion\Proyecto distribuidos\Server\Serverchat\Serverchat\obj\Debug\net6.0\Serverchat.pdb
 C:\Users\olver\OneDrive\Desktop\Proyectos de programacion\Proyecto distribuidos\Server\Serverchat\Serverchat\obj\Debug\net6.0\Serverchat.genruntimeconfig.cache
 C:\Users\olver\OneDrive\Desktop\Proyectos de programacion\Proyecto distribuidos\Server\Serverchat\Serverchat\obj\Debug\net6.0\ref\Serverchat.dll
+C:\Users\olver\OneDrive\Desktop\Proyectos de programacion\Proyecto distribuidos\Server\Serverchat\Serverchat\obj\Debug\net6.0\Serverchat.csproj.AssemblyReference.cache
+C:\Users\olver\OneDrive\Desktop\Proyectos de programacion\Proyecto distribuidos\Server\Serverchat\Serverchat\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\olver\OneDrive\Desktop\Proyectos de programacion\Proyecto distribuidos\Server\Serverchat\Serverchat\obj\Debug\net6.0\Serverchat.csproj.CopyComplete

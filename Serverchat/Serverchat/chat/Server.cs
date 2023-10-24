@@ -6,15 +6,22 @@ using System.Net.Sockets;
 using Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using Serialization;
+using Newtonsoft.Json;
+using sockx;
+
+
 
 namespace ChatServer.Chat
 {
     class Server
     {
+        private List<User> connectedClients = new List<User>();
+    
+
         IPHostEntry host;
         IPAddress IpAddr;
         IPEndPoint endPoint;
-
         Socket s_server;
         Socket s_cliente;
         public Server(string ip, int port) 
@@ -37,6 +44,8 @@ namespace ChatServer.Chat
                 t = new Thread(start: clientConnection);
                 t.Start(s_cliente);
                 Console.WriteLine("Se ha conectado un cliente");
+                
+
             }
          
         }
@@ -44,6 +53,7 @@ namespace ChatServer.Chat
         {
             Socket s_cliente = (Socket)s;
             byte[] Buffer;
+            User user;
             string message;
 
             try
@@ -52,16 +62,19 @@ namespace ChatServer.Chat
                 {
                     Buffer = new byte[1024];
                     s_cliente.Receive(Buffer);
-                    message = byte2string(Buffer);
-                    Console.WriteLine("Se recibio el mensaje: " + message);
-                    byte[] response = Encoding.ASCII.GetBytes("Hola "+message);
-                    s_cliente.Send(response);
+                    user = (User) BinarySerialization.Deserializate(Buffer);
+                    Console.WriteLine("Se recibio el mensaje de: " + user.name);
+                    connectedClients.Add(user);
+                    SendUserListToAllClients(connectedClients);
                     Console.Out.Flush();
+                    
                 }
             }
             catch(SocketException se)
             {
+              
                 Console.WriteLine ("Se desconecto un cliente",se.Message);
+               
             }
             
         }
@@ -77,6 +90,13 @@ namespace ChatServer.Chat
 
             return message;
         }
-     
+        private void SendUserListToAllClients(object tosend)
+        {
+            string serializedList = JsonConvert.SerializeObject(tosend);
+            byte[] data = Encoding.UTF8.GetBytes(serializedList);
+            s_cliente.Send(data);
+            Console.WriteLine("Lista enviada");
+        }
+
     }
 }

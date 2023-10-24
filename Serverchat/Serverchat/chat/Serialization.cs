@@ -22,7 +22,8 @@ namespace Serialization
         {
             MemoryStream memory = new MemoryStream(data);
             BinaryFormatter formatter = new BinaryFormatter();
-            formatter.Binder = new CurrentAssemblyDeserializationBinder();
+            formatter.Binder = new CurrentAssemblyDeserializationBinder(); 
+            
 
             return formatter.Deserialize(memory);
         }

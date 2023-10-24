@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "kF9EmEidYgrySapmF7sNrdGvSxW8ineVWbVWogx43wfIul/L5/68ywLHpNdPmGIymA7/gto2eMSl6eerMDHiQA==",
+  "dgSpecHash": "pr7zOuut4BBb0uU+S9YXGg93rUhNYoTbYI2fxyIJrEPViXCou/PpNea2EMNw1rBtlbEKvw/1+2x674AO/OUeNA==",
   "success": true,
   "projectFilePath": "C:\\Users\\olver\\OneDrive\\Desktop\\Proyectos de programacion\\Proyecto distribuidos\\Server\\Serverchat\\Serverchat\\Serverchat.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\olver\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
