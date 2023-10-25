@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "LibreriaNodos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/LibreriaNodos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibreriaNodos.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "LibreriaNodos/1.0.0": {
+      "type": "project",
+      "path": "../../../../../LibreriaNodos-master/LibreriaNodos/LibreriaNodos.csproj",
+      "msbuildProject": "../../../../../LibreriaNodos-master/LibreriaNodos/LibreriaNodos.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "LibreriaNodos >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\olver\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\olver\\OneDrive\\Desktop\\LibreriaNodos-master\\LibreriaNodos\\LibreriaNodos.csproj": {
+              "projectPath": "C:\\Users\\olver\\OneDrive\\Desktop\\LibreriaNodos-master\\LibreriaNodos\\LibreriaNodos.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
